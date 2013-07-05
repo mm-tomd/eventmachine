@@ -365,7 +365,7 @@ int SslBox_t::GetPlaintext (char *buf, int bufsize)
 
 	int n = SSL_read (pSSL, buf, bufsize);
 	// if (n >= 0) {
-	if (n > 0)
+	if (n > 0) {
 		return n;
 	}
 	else {
