@@ -369,6 +369,7 @@ int SslBox_t::GetPlaintext (char *buf, int bufsize)
 		return n;
 	}
 	else {
+		cerr << "SSL ERROR: " << SSL_get_error (pSSL, n) << endl;
 		if (SSL_get_error (pSSL, n) == SSL_ERROR_WANT_READ) {
 			return 0;
 		}
